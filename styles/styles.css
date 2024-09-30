@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   color: #0f172a;
@@ -23,10 +24,10 @@ body {
 /* Hero Section */
 .hero-section {
   background-image: url("../images/hero-section/rectangle-31.svg");
-  background-size: contain;
-  background-position: top right;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -82,20 +83,22 @@ body {
 
 .features-section {
   padding-top: 120px;
-  width: 100vw;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    background-image: url("../images/hero-section/rectangle-31-min.svg");
-    background-size: contain;
+    background-image: url("../images/hero-section/rectangle-31.svg");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh;
   }
   .features-section {
     background-color: #fef3c7;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    width: 100vw;
   }
 }
 .info-card-container {
@@ -114,4 +117,63 @@ body {
 .hero-section-title {
   font-size: 72px;
   font-weight: 800;
+}
+
+/* Product Card Section */
+.product-card-section {
+  background-color: #0f172a;
+  padding: 60px 0;
+  color: #fff;
+}
+
+.product-card-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.btn-custom {
+  background-color: #0f172a;
+  color: #fff;
+  border: 2px solid white;
+}
+.btn-custom:hover {
+  background-color: white;
+  color: #0f172a;
+}
+
+.product-card {
+  border-radius: 10px;
+  box-shadow: 0px 25px 50px -12px rgba(255, 255, 255, 0.2509803922), 0px 0px 15px 0px rgba(255, 255, 255, 0.0705882353);
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.product-card .product-card-info {
+  padding: 20px; /* İçeriklere boşluk ekler */
+}
+.product-card .product-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+.product-card .product-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.product-card .buy-now-btn {
+  color: #fff;
+  border: 2px solid white;
+  display: block;
+  text-align: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }/*# sourceMappingURL=styles.css.map */
