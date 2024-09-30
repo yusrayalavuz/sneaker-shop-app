@@ -2,6 +2,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #0f172a;
+  background-color: #f7f4e6;
 }
 
 /* Navbar */
@@ -130,7 +131,6 @@ body {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 40px;
 }
 
 .btn-custom {
@@ -176,4 +176,49 @@ body {
   text-align: center;
   align-items: center;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Why Join Us Section */
+.why-join-us-section {
+  padding: 150px 0;
+}
+.why-join-us-section .why-join-us-wrapper {
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.0705882353), 0px 20px 25px -5px rgba(0, 0, 0, 0.1019607843);
+  display: flex;
+  background-color: white;
+  z-index: 1;
+  padding: 50px;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-content {
+  padding: 50px 20px;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-content ul {
+  list-style: none;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-image-wrapper {
+  position: relative;
+  text-align: center;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-image-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  height: auto;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-image-wrapper .background-image {
+  z-index: 1;
+  width: 150%;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-image-wrapper .foreground-image {
+  z-index: 2;
+  width: 90%;
+}
+.why-join-us-section .why-join-us-wrapper .why-join-us-image-wrapper .design-image {
+  z-index: 3;
+  top: 335px;
+  left: 180px;
 }/*# sourceMappingURL=styles.css.map */
