@@ -1,5 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
+  color: #0f172a;
 }
 
 /* Navbar */
@@ -15,20 +16,102 @@ body {
   font-weight: 500;
 }
 
-.btn-outline-primary {
-  border-color: #78350f;
+.navbar-toggler {
+  border: none;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url("../images/hero-section/rectangle-31.svg");
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.btn-signup {
+  background-color: transparent;
   color: #78350f;
   font-size: 16px;
   font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: 2px solid #78350f;
 }
-.btn-outline-primary:focus, .btn-outline-primary:hover {
+.btn-signup:hover {
   background-color: #78350f;
   color: #fff;
+}
+.btn-signup:focus {
   outline: none;
-  box-shadow: none;
-  border-color: #78350f;
+  box-shadow: 0 0 5px rgba(120, 53, 15, 0.5);
 }
 
-.navbar-toggler {
+.btn-watch-demo {
+  background-color: transparent;
+  color: #78350f;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
   border: none;
+}
+.btn-watch-demo:hover {
+  background-color: #78350f;
+  color: #fff;
+}
+.btn-watch-demo:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(120, 53, 15, 0.5);
+}
+.btn-watch-demo img {
+  margin-right: 8px;
+  transition: color 0.3s ease;
+}
+.btn-watch-demo:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.features-section {
+  padding-top: 120px;
+  width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-image: url("../images/hero-section/rectangle-31-min.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .features-section {
+    background-color: #fef3c7;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+}
+.info-card-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 20px;
+}
+
+.background-shape {
+  position: absolute;
+  top: -6px;
+  left: 40px;
+}
+
+.hero-section-title {
+  font-size: 72px;
+  font-weight: 800;
 }/*# sourceMappingURL=styles.css.map */
