@@ -40,3 +40,117 @@ document.addEventListener("DOMContentLoaded", () => {
         productCardsContainer.appendChild(card);
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const reviewCards = [
+        {
+            logoSrc: "images/review-carousel/logo1.svg",
+            logoText: "Zoomerr",
+            reviewText: "Non risus viverra enim, quis. Eget vitae arcu vivamus sit tellus, viverra turpis lorem. Varius a turpis urna id porttitor.",
+            reviewerImgSrc: "images/review-carousel/UserThumb1.png",
+            reviewerName: "Hellen Jummy",
+            reviewerTitle: "Team Lead"
+        },
+        {
+            logoSrc: "images/review-carousel/logo2.svg",
+            logoText: "SHELLS",
+            reviewText: "Aliquet ridiculus mi porta habitant vulputate rhoncus, mattis amet enim. Sit purus venenatis velit semper lectus sed ornare quam nulla.",
+            reviewerImgSrc: "images/review-carousel/UserThumb2.png",
+            reviewerName: "Hellena John",
+            reviewerTitle: "Co-founder"
+        },
+        {
+            logoSrc: "images/review-carousel/logo3.svg",
+            logoText: "ArtVenue",
+            reviewText: "A eget sed posuere dui risus habitasse mauris. Venenatis aliquet id ultrices a lacus. Pretium vehicula pretium posuere justo sed.",
+            reviewerImgSrc: "images/review-carousel/UserThumb3.png",
+            reviewerName: "David Oshodi",
+            reviewerTitle: "Manager"
+        },
+        {
+            logoSrc: "images/review-carousel/logo4.svg",
+            logoText: "WAVES",
+            reviewText: "A eget sed posuere dui risus habitasse mauris. Venenatis aliquet id ultrices a lacus. Pretium vehicula pretium posuere justo sed.",
+            reviewerImgSrc: "images/review-carousel/UserThumb4.png",
+            reviewerName: "Sarah Collins",
+            reviewerTitle: "Senior Developer"
+        }, {
+            logoSrc: "images/review-carousel/logo1.svg",
+            logoText: "Zoomerr",
+            reviewText: "Non risus viverra enim, quis. Eget vitae arcu vivamus sit tellus, viverra turpis lorem. Varius a turpis urna id porttitor.",
+            reviewerImgSrc: "images/review-carousel/UserThumb1.png",
+            reviewerName: "Hellen Jummy",
+            reviewerTitle: "Team Lead"
+        },
+        {
+            logoSrc: "images/review-carousel/logo2.svg",
+            logoText: "SHELLS",
+            reviewText: "Aliquet ridiculus mi porta habitant vulputate rhoncus, mattis amet enim. Sit purus venenatis velit semper lectus sed ornare quam nulla.",
+            reviewerImgSrc: "images/review-carousel/UserThumb2.png",
+            reviewerName: "Hellena John",
+            reviewerTitle: "Co-founder"
+        },
+        {
+            logoSrc: "images/review-carousel/logo3.svg",
+            logoText: "ArtVenue",
+            reviewText: "A eget sed posuere dui risus habitasse mauris. Venenatis aliquet id ultrices a lacus. Pretium vehicula pretium posuere justo sed.",
+            reviewerImgSrc: "images/review-carousel/UserThumb3.png",
+            reviewerName: "David Oshodi",
+            reviewerTitle: "Manager"
+        },
+        {
+            logoSrc: "images/review-carousel/logo4.svg",
+            logoText: "WAVES",
+            reviewText: "A eget sed posuere dui risus habitasse mauris. Venenatis aliquet id ultrices a lacus. Pretium vehicula pretium posuere justo sed.",
+            reviewerImgSrc: "images/review-carousel/UserThumb4.png",
+            reviewerName: "Sarah Collins",
+            reviewerTitle: "Senior Developer"
+        }
+    ];
+
+
+    const reviewCardsContainer = document.getElementById('review-cards-container');
+
+    reviewCards.forEach(review => {
+        const card = document.createElement('div');
+        card.className = 'review-card'; // class isimlerini güncelledik
+
+        card.innerHTML = `
+        <div class="card text-center">
+            <div class="review-header d-flex align-items-center justify-content-start mb-3">
+                <img src="${review.logoSrc}" alt="Logo" class="review-logo">
+                <span class="logo-text text-start ms-2">${review.logoText}</span> <!-- Logoya ait yazı eklendi -->
+            </div>
+            <p class="review-text text-align-start mb-4">${review.reviewText}</p>
+            <div class="reviewer-info d-flex align-items-end justify-content-start mt-auto">
+                <img src="${review.reviewerImgSrc}" alt="Reviewer" class="reviewer-image rounded-circle">
+                <div class="reviewer-details text-start ms-3">
+                    <h5 class="reviewer-name mb-0">${review.reviewerName}</h5>
+                    <p class="reviewer-title">${review.reviewerTitle}</p>
+                </div>
+            </div>
+        </div>
+    `;
+        document.getElementById('review-cards-container').appendChild(card);
+    });
+
+
+    // Kaydırma işlevi
+    function scrollCards(direction) {
+        const container = document.getElementById('review-cards-container');
+        const scrollAmount = direction === 'left' ? -200 : 200;
+
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+
+    // Sol ve sağ oklara tıklama olayı
+    const leftArrow = document.querySelector('.arrow-left');
+    const rightArrow = document.querySelector('.arrow-right');
+
+    if (leftArrow && rightArrow) {
+        leftArrow.addEventListener('click', () => scrollCards('left'));
+        rightArrow.addEventListener('click', () => scrollCards('right'));
+    }
+});

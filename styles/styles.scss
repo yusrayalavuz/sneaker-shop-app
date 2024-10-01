@@ -237,6 +237,95 @@ $product-card-text-color: #fff;
     }
   }
 }
+
+/* Review Card Section */
+.review-carousel {
+  padding: 50px 0;
+  position: relative;
+
+  .review-carousel-bg {
+    background-color: #fde68a;
+    position: relative;
+    height: 300px;
+    z-index: -1;
+  }
+
+  .review-carousel-inner {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    top: 40px;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    z-index: 1;
+
+    .review-card {
+      background-color: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 0px 6px 0px #00000012, 0px 10px 15px -3px #0000001a;
+      width: 300px;
+      flex-shrink: 0;
+    }
+    .card {
+      border: none;
+
+      .review-header {
+        .review-logo {
+          height: 32px;
+        }
+        .logo-text {
+          font-size: 24px;
+          color: #475569;
+        }
+      }
+      .review-text {
+        font-size: 16px;
+      }
+
+      .reviewer-info {
+        .reviewer-image {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        .reviewer-details {
+          margin-left: 15px;
+
+          .reviewer-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0;
+          }
+
+          .reviewer-title {
+            font-size: 14px;
+            color: #777;
+          }
+        }
+      }
+    }
+  }
+}
+.review-carousel-container {
+  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+}
+.arrow-left,
+.arrow-right {
+  z-index: 1;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /*Footer */
 footer {
   background-color: #0f172a;
@@ -307,11 +396,8 @@ footer {
   font-size: 14px;
 }
 
-//
-
 .footer-bottom a {
   text-decoration: none;
-
   margin: 0 10px;
 }
 
