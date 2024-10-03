@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h5 class="product-title">${product.title}</h5>
                 <p class="product-description">${product.description}</p>
                 <a href="${product.buyNowLink}" class="btn  buy-now-btn">
-                    <img src="images/product-card/shopping-cart-icon.svg" alt="Cart Icon"> Buy Now
+                    <img src="images/product-card/shopping-cart-icon.svg" alt="Cart Icon" class="cart-icon"> Buy Now
                 </a>
                 </div>
             </div>
@@ -112,8 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reviewCards.forEach(review => {
         const card = document.createElement('div');
-        card.className = 'review-card'; // class isimlerini güncelledik
-
+        card.className = 'review-card';
         card.innerHTML = `
         <div class="card text-center">
             <div class="review-header d-flex align-items-center justify-content-start mb-3">
@@ -134,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // Kaydırma işlevi
+
     function scrollCards(direction) {
         const container = document.getElementById('review-cards-container');
         const scrollAmount = direction === 'left' ? -200 : 200;
@@ -145,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Sol ve sağ oklara tıklama olayı
+
     const leftArrow = document.querySelector('.arrow-left');
     const rightArrow = document.querySelector('.arrow-right');
 
@@ -153,4 +152,48 @@ document.addEventListener("DOMContentLoaded", () => {
         leftArrow.addEventListener('click', () => scrollCards('left'));
         rightArrow.addEventListener('click', () => scrollCards('right'));
     }
+});
+
+const points = document.querySelectorAll('.map-point');
+const tooltipContent = document.getElementById('tooltip-content');
+const tooltipImage = document.getElementById('tooltip-image');
+const tooltipDescription = document.getElementById('tooltip-description');
+
+
+const newPositions = [
+    { top: '40%', left: '30%' },
+    { top: '50%', left: '65%' },
+    { top: '30%', left: '75%' },
+];
+
+
+points.forEach((point, index) => {
+    if (newPositions[index]) {
+        point.style.top = newPositions[index].top;
+        point.style.left = newPositions[index].left;
+    }
+
+    point.addEventListener('mouseover', (event) => {
+        const image = point.querySelector('.tooltip').innerText;
+        const description = point.getAttribute('data-content');
+
+        tooltipImage.src = `images/grow-collection/${image}.jpg`;
+
+        tooltipImage.onload = function () {
+            tooltipContent.style.display = 'block';
+            const rect = point.getBoundingClientRect();
+            tooltipContent.style.left = `${rect.left + window.scrollX}px`;
+            tooltipContent.style.top = `${rect.bottom + window.scrollY}px`;
+        };
+
+        tooltipImage.onerror = function () {
+            console.error('Resim yüklenirken bir hata oluştu:', tooltipImage.src);
+        };
+
+        tooltipDescription.innerText = description;
+    });
+
+    point.addEventListener('mouseout', () => {
+        tooltipContent.style.display = 'none';
+    });
 });
